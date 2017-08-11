@@ -32,10 +32,10 @@ namespace MapLogBot
                     var username = parsedContent.Split(' ')[0];
                     var poke = response.Split(new [] { " caught a:</strong></td></tr><tr><td><strong>" }, StringSplitOptions.None)[1].Split(new [] { " <" }, StringSplitOptions.None)[0];
                     var level = parsedContent.Split(' ').Last();
-                    Console.WriteLine("[" + time + "]" + " " + username + " - " + poke + " - Level " + level);
+                    Console.WriteLine("[{0}] {1} - {2} - Level {3}", time, username, poke, level);
                     using (StreamWriter w = File.AppendText(LogFile))
                     {
-                        w.WriteLine("[" + time + "]" + " " + username + " - " + poke + " - Level " + level);
+                        w.WriteLine("[{0}] {1} - {2} - Level {3}", time, username, poke, level);
                     }
                 }
             }
